@@ -24,22 +24,8 @@ public class CardTrick {
         
         // Hard code the lucky card
         Card luckyCard = new Card();
-        luckyCard.setValue(7); // for example, value 7
-        luckyCard.setSuit(Card.SUITS[2]); // for example, suit Spades
-
-        // Ask the user to pick a card value and suit
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Pick a card value (1 for Ace, 11 for Jack, 12 for Queen, 13 for King):");
-        int userValue = scanner.nextInt();
-        System.out.println("Pick a suit (0 for Hearts, 1 for Diamonds, 2 for Spades, 3 for Clubs):");
-        int userSuitIndex = scanner.nextInt();
-
-        // Check if the user's card matches the lucky card
-        if (userValue == luckyCard.getValue() && userSuitIndex == 2) {
-            System.out.println("Congratulations! You picked the lucky card!");
-        } else {
-            System.out.println("Sorry, that's not the lucky card.");
-        }
+        luckyCard.setValue(13); // King
+        luckyCard.setSuit(Card.SUITS[0]); // Hearts
 
         // Check if the lucky card is in the magic hand
         boolean found = false;
@@ -50,12 +36,12 @@ public class CardTrick {
             }
         }
 
+        // Report the result
         if (found) {
-            System.out.println("The lucky card is in the magic hand!");
+            System.out.println("The lucky card (King of Hearts) is in the magic hand!");
         } else {
-            System.out.println("Unfortunately, the lucky card is not in the magic hand.");
+            System.out.println("Unfortunately, the lucky card (King of Hearts) is not in the magic hand.");
         }
-
-        scanner.close();
     }
 }
+
